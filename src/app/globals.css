@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Reusable tailwind css class for colors */
+.text-primary {
+  @apply text-blue-600;
+}
+.text-secondary {
+  @apply text-blue-300;
+}
+
+/* Reusable tailwind css class */
+.flex-cen {
+  @apply flex items-center justify-center;
+}
+.flex-bt {
+  @apply flex items-center justify-between;
+}
+.flex-ar {
+  @apply flex items-center justify-around;
+}

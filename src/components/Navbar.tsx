@@ -4,10 +4,16 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="py-4 px-12 flex items-center justify-between">
-      <Image className="h-12 w-12 rounded-full" src={RA_logo} alt="RA logo" />
+    <div className="py-4 px-12 flex-bt">
+      <div className="flex-cen">
+        <Image className="h-10 w-10 rounded-full" src={RA_logo} alt="RA logo" />
+        <h1 className="ml-2 text-xl font-bold">
+          <span className="text-primary">Resume </span>
+          <span className="text-secondary">Analyzer</span>
+        </h1>
+      </div>
 
-      <div className="w-3/4 flex items-center justify-around">
+      <div className="w-3/4 flex-ar">
         <Link href="/">Home</Link>
         <Link href="/analyzer">Analyzer</Link>
         <Link href="/feedback">Feedback</Link>

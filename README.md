@@ -36,7 +36,7 @@ A web app that analyzes your resume against a job description and gives a job-fi
 
 ## 👨‍💻 Contributor
 
-- **Your Name**  
+- **Md Mohsin Raja**  
   [GitHub](https://github.com/MohsinKing2002) | [LinkedIn](https://www.linkedin.com/in/md-mohsin-raja-628370244/)
 
 ---
