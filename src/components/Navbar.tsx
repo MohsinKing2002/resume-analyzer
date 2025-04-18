@@ -13,7 +13,7 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <div className="w-3/4 flex-ar">
+      <div className="w-3/4 flex-ar font-semibold text-secondary">
         <Link href="/">Home</Link>
         <Link href="/analyzer">Analyzer</Link>
         <Link href="/feedback">Feedback</Link>
