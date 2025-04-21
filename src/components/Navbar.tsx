@@ -14,10 +14,18 @@ const Navbar = () => {
       </div>
 
       <div className="w-3/4 flex-ar font-semibold text-secondary">
-        <Link href="/">Home</Link>
-        <Link href="/analyzer">Analyzer</Link>
-        <Link href="/feedback">Feedback</Link>
-        <Link href="/feedback">Source Code</Link>
+        <Link className="style-nav" href="/">
+          Home
+        </Link>
+        <Link className="style-nav" href="/analyzer">
+          Analyzer
+        </Link>
+        <Link className="style-nav" href="/feedback">
+          Feedback
+        </Link>
+        <Link className="style-nav" href="/feedback">
+          Source Code
+        </Link>
       </div>
     </div>
   );

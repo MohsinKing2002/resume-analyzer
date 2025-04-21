@@ -1,7 +1,15 @@
 import { InputType } from "@/types";
 import React from "react";
 
-const Inputs = ({ label, placeholder, type, id }: InputType) => {
+const Inputs = ({
+  label,
+  placeholder,
+  type,
+  id,
+  name,
+  value,
+  onChange,
+}: InputType) => {
   return (
     <div className="w-1/3">
       <label htmlFor={id} className="style-labels">
@@ -9,10 +17,13 @@ const Inputs = ({ label, placeholder, type, id }: InputType) => {
       </label>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         id={id}
         required
         className="style-inputs"
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+  --secondary: rgb(147 197 253 / var(--tw-bg-opacity, 1));
+  --light: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
 @theme inline {
@@ -27,16 +30,16 @@ body {
 
 /* Reusable tailwind css class for colors */
 .text-primary {
-  @apply text-blue-600;
+  @apply text-[var(--primary)];
 }
 .text-secondary {
-  @apply text-blue-300;
+  @apply text-[var(--secondary)];
 }
 .text-light {
-  @apply text-gray-400;
+  @apply text-[var(--light)];
 }
 .text-dark {
-  @apply text-black;
+  @apply text-[var(--background)];
 }
 
 /* Reusable tailwind css class */
@@ -54,13 +57,24 @@ body {
   @apply min-h-screen p-10;
 }
 
+.style-footer {
+  @apply text-base text-[var(--secondary)] text-center p-4;
+}
+
+.style-nav {
+  @apply text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300 focus:text-[var(--primary)];
+}
+
 .style-titles {
-  @apply text-2xl font-semibold text-blue-300;
+  @apply text-2xl font-semibold text-[var(--secondary)];
 }
 
 .style-labels {
-  @apply block w-full text-base text-blue-300 mb-2;
+  @apply block w-full text-base text-[var(--secondary)] mb-2;
 }
 .style-inputs {
-  @apply block w-full text-base text-gray-300 rounded-lg outline-none p-3 border border-blue-300;
+  @apply block w-full text-base text-[var(--light)] rounded-lg outline-none p-3 border border-[var(--secondary)];
+}
+.style-btn {
+  @apply bg-[var(--secondary)] text-[var(--background)] cursor-pointer py-3 px-6 rounded-lg text-base hover:bg-[var(--primary)] hover:text-[var(--light)] transition duration-300;
 }

@@ -1,12 +1,14 @@
 export type InputType = {
   label: string;
   placeholder: string;
-  type?: string;
   id: string;
-  func?: Function;
+  name: string;
+  type?: string;
+  value?: string;
+  onChange?: any;
 };
 
 export type ButtonType = {
   label: string;
-  func?: Function;
+  onClick?: any;
 };
