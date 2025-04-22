@@ -76,5 +76,5 @@ body {
   @apply block w-full text-base text-[var(--light)] rounded-lg outline-none p-3 border border-[var(--secondary)];
 }
 .style-btn {
-  @apply bg-[var(--secondary)] text-[var(--background)] cursor-pointer py-3 px-6 rounded-lg text-base hover:bg-[var(--primary)] hover:text-[var(--light)] transition duration-300;
+  @apply bg-[var(--secondary)] text-[var(--background)] py-3 px-6 rounded-lg text-base hover:bg-[var(--primary)] hover:text-[var(--light)] transition duration-300;
 }

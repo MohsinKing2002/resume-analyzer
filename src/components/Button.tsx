@@ -1,8 +1,12 @@
 import { ButtonType } from "@/types";
 
-const Button = ({ label, onClick }: ButtonType) => {
+const Button = ({ label, onClick, disabled }: ButtonType) => {
   return (
-    <button onClick={onClick} className="style-btn">
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={`style-btn ${disabled ? "cursor-text" : "cursor-pointer"}`}
+    >
       {label}
     </button>
   );

@@ -2,7 +2,7 @@
 import Button from "@/components/Button";
 import Inputs from "@/components/Inputs";
 import Textarea from "@/components/Textarea";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Page() {
   const [data, setData] = useState({
@@ -12,15 +12,24 @@ export default function Page() {
     feedback: "",
   });
 
-  const handleInputChange = (e: any) => {
+  const disabled =
+    data?.email?.trim() === "" ||
+    data?.feedback?.trim() === "" ||
+    data?.name?.trim() === "" ||
+    data?.subject?.trim() === "";
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     e.preventDefault();
     const name = e.target.name,
       value = e.target.value;
     setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleOnSubmit = (e: any) => {
+  const handleOnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    alert("Plz check your console.");
     console.log("data->", data);
   };
 
@@ -36,7 +45,7 @@ export default function Page() {
 
       <form className="flex-cen flex-col space-y-8">
         <Inputs
-          label="Name"
+          label="Name *"
           name="name"
           id="name"
           type="text"
@@ -45,7 +54,7 @@ export default function Page() {
           onChange={handleInputChange}
         />
         <Inputs
-          label="Email"
+          label="Email *"
           id="email"
           type="email"
           name="email"
@@ -54,7 +63,7 @@ export default function Page() {
           onChange={handleInputChange}
         />
         <Inputs
-          label="Subject"
+          label="Subject *"
           id="subject"
           type="text"
           name="subject"
@@ -63,7 +72,7 @@ export default function Page() {
           onChange={handleInputChange}
         />
         <Textarea
-          label="Feedback"
+          label="Feedback *"
           id="feedback"
           name="feedback"
           placeholder="Your Feedback goes here.."
@@ -71,7 +80,11 @@ export default function Page() {
           onChange={handleInputChange}
         />
 
-        <Button onClick={handleOnSubmit} label="Send Feedback" />
+        <Button
+          disabled={disabled}
+          onClick={handleOnSubmit}
+          label="Send Feedback"
+        />
       </form>
     </div>
   );

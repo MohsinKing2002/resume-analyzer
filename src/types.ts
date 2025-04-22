@@ -1,3 +1,5 @@
+import React from "react";
+
 export type InputType = {
   label: string;
   placeholder: string;
@@ -5,10 +7,11 @@ export type InputType = {
   name: string;
   type?: string;
   value?: string;
-  onChange?: any;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 };
 
 export type ButtonType = {
   label: string;
-  onClick?: any;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 };

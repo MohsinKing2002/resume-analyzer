@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/Button";
 import Inputs from "@/components/Inputs";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Page() {
   const [data, setData] = useState({
@@ -9,15 +9,20 @@ export default function Page() {
     resume: "",
   });
 
-  const handleInputChange = (e: any) => {
+  const disabled = data?.job_link?.trim() === "" || data?.resume?.trim() === "";
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     e.preventDefault();
     const name = e.target.name,
       value = e.target.value;
     setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleOnSubmit = (e: any) => {
+  const handleOnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    alert("Plz check your console.");
     console.log("data->", data);
   };
 
@@ -26,13 +31,15 @@ export default function Page() {
       <div className="w-full block text-center space-y-4">
         <h1 className="style-titles">Resume Analyzer</h1>
         <p className="w-1/2 mx-auto text-base text-gray-300">
-          Upload your Resume and input the Job link. We'll do the rest for you.
+          {
+            "Upload your Resume and input the Job link. We'll do the rest for you."
+          }
         </p>
       </div>
 
       <form className="flex-cen flex-col space-y-8">
         <Inputs
-          label="Job Link"
+          label="Job Link *"
           id="job"
           type="text"
           name="job_link"
@@ -41,7 +48,7 @@ export default function Page() {
           onChange={handleInputChange}
         />
         <Inputs
-          label="Resume"
+          label="Resume *"
           id="resume"
           type="file"
           name="resume"
@@ -50,7 +57,11 @@ export default function Page() {
           onChange={handleInputChange}
         />
 
-        <Button onClick={handleOnSubmit} label="Send Feedback" />
+        <Button
+          disabled={disabled}
+          onClick={handleOnSubmit}
+          label="Send Feedback"
+        />
       </form>
     </div>
   );
